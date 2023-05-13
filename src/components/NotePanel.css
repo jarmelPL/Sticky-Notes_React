@@ -1,0 +1,62 @@
+.note-panel-shadow {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.note-panel {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px black;
+    background-color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    width: 35vw; }
+
+.note-panel h2 {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.note-panel label, select, textarea {
+    margin-bottom: 0.5rem;
+}
+
+.note-panel select {
+    height: 2rem;
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 3px;
+}
+
+.note-panel select:focus {
+    border-color: rgb(115, 115, 230);
+    outline: rgb(115, 115, 230);
+}
+
+.note-panel textarea {
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 3px;
+    resize: vertical;
+    max-height: 60vh;
+    min-height: 3rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.note-panel textarea:focus {
+    border-color: rgb(115, 115, 230);
+    outline: rgb(115, 115, 230);
+}
+
+.note-panel .panel-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}

@@ -1,0 +1,35 @@
+.note-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; }
+
+.note {
+    width: 15vw;
+    min-width: 180px;
+    margin-top: 5rem;
+    border: 1px solid black;
+    height: 100%;
+    background-color: rgb(255, 255, 0); }
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0,0,0,0.2);
+    padding: 1rem;
+}
+
+.delete-note {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.note-body {
+    padding: 1rem;
+    font-size: .75rem;
+}
+
+h3 {
+    margin: 0;
+}
