@@ -3,26 +3,47 @@ import ReactDOM from 'react-dom'
 import styles from './Common.module.css'
 import './NotePanel.css'
 
+
+
 const NotePanel = (props) => {
     const [enteredText, setEnteredText] = useState('')
     const [enteredSelect, setEnteredSelect] = useState('')
+    const [errorState, setErrorState] = useState(false)
 
     const textareaChangeHandler = (event) => {
         setEnteredText(event.target.value)
-        // console.log(event.target.value)
     }
     const selectChangeHandler = (event) => {
         setEnteredSelect(event.target.value)
-        // console.log(event.target.value)
     }
 
     const addNoteHandler = () => {
-        const noteData = {
-            category: enteredSelect,
-            text: enteredText
+        if (enteredText=='' || enteredSelect=='') {
+            setErrorState(true)
+            return
+        } else {
+            setErrorState(false)
         }
 
-        console.log(noteData)
+        let noteBackground = ''
+
+        if (enteredSelect==="Zakupy") {
+            noteBackground="red"
+        } else if (enteredSelect==="Praca") {
+            noteBackground="yellow"
+        } else {
+            noteBackground="grey"
+        }
+
+        const noteData = {
+            category: enteredSelect,
+            background: noteBackground,
+            text: enteredText,
+            id: props.newNoteID,
+            key: Math.random().toString()
+        }
+
+        props.addNote(noteData)
     }
 
   return (
@@ -42,7 +63,7 @@ const NotePanel = (props) => {
                     <label htmlFor="text">Wpisz treść notatki</label>
                     <textarea id="text" onChange={textareaChangeHandler}></textarea>
 
-                    <p className="error">Uzupełnij wszystkie pola!</p>
+                    <p className={errorState ? "error-active" : "error"}>Uzupełnij wszystkie pola!</p>
 
                     <div className="panel-buttons">
                         <button className={styles.buttons} onClick={addNoteHandler}><i className="fas fa-save"></i> Zapisz</button>

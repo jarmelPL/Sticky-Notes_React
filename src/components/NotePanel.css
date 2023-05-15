@@ -60,3 +60,14 @@
     align-items: center;
     gap: 1rem;
 }
+
+.error {
+    font-size: .75rem;
+    visibility: hidden;
+}
+
+.error-active {
+    font-size: .75rem;
+    color: red;
+    visibility: visible;
+}
