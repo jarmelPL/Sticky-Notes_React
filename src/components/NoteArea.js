@@ -13,6 +13,7 @@ const NoteArea = (props) => {
             text={note.text}
             id={note.id}
             key={note.key}
+            deleteOne={props.deleteOne}
         />)}
     </div>
   );

@@ -27,10 +27,17 @@ const App = () => {
     noteID = 1
   }
 
+  const deleteOneNote = (itemID) => {
+    setNotes(prevNotes => {
+      const newNotes = prevNotes.filter(item => item.id != itemID)
+      return newNotes
+    })
+  }
+
   return (
     <React.Fragment>
       <Menu open={openPanel} deleteAll={deleteNotes}/>
-      <NoteArea items={notes}/>
+      <NoteArea items={notes} deleteOne={deleteOneNote}/>
       {panel && <NotePanel close={closePanel} addNote={generateNotes} newNoteID={noteID}/>}
     </React.Fragment>
   );
